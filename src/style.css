@@ -1,0 +1,369 @@
+:root {
+    --background: #e4e4e4;
+    --background-black: #1e1e1e;
+    --card-background: #ececec;
+
+    --text-title: #0f0f0f;
+    --text-body: #151515;
+    --text-alt: #ebebeb;
+
+    --await: #ececec;
+    --error: #ff5070;
+    --sucess: #6aab41;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    @media screen and (max-widht: 1080px) {
+        font-size: 93.75%;
+    }
+
+    @media screen and (max-widht: 720px) {
+        font-size: 87.5%;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body,
+input,
+textarea,
+button {
+    background: var(--background);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: 600;
+}
+
+input[type=button] {
+    cursor: pointer;
+}
+
+.loader {
+    margin-left: 0.5rem;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--text-body);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.message-control {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 1.75rem;
+    padding: 1rem 1.75rem;
+    width: auto;
+    z-index: 1;
+}
+
+.await-message {
+    background: var(--await);
+    color: var(--text-body);
+}
+
+.error-message {
+    background: var(--error);
+    color: var(--text-alt);
+}
+
+.sucess-message {
+    background: var(--sucess);
+    color: var(--text-alt);
+}
+
+.find {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 1.25rem;
+    color: var(--text-title);
+    margin-bottom: 0;
+}
+
+.title p {
+    color: var(--text-body);
+}
+
+.form-control {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-search {
+    position: relative;
+}
+
+.inputs-search label {
+    display: none;
+}
+
+.inputs-search input {
+    transition: filter 0.5s;
+}
+
+.inputs-search input:hover {
+    filter: brightness(0.95);
+}
+
+.inputs-search input[type=text] {
+    max-width: 500px;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: var(--card-background);
+    border-radius: 1.25rem;
+    color: var(--text-title);
+    outline: none;
+}
+
+.inputs-search input[type=text]::placeholder {
+    color: var(--text-body);
+}
+
+.inputs-search input[type=button] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.5rem 1.75rem;
+    border: none;
+    background: var(--background-black);
+    color: var(--text-alt);
+    border-radius: 1.25rem;
+}
+
+.form-control input[type=button] {
+    padding: 0.5rem 1.75rem;
+    border: none;
+    background: var(--background-black);
+    color: var(--text-alt);
+    border-radius: 1.25rem;
+}
+
+.return-pokes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 0.75rem;
+}
+
+.return-pokes .card {
+    width: 100%;
+    max-width: 300px;
+    min-height: 200px;
+    text-align: center;
+    padding: 1rem;
+    background: var(--card-background);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.return-pokes .card h2 {
+    font-size: 1rem;
+}
+
+.return-pokes .card .details-button {
+    padding: 0.5rem 1.75rem;
+    border: none;
+    background: var(--background-black);
+    color: var(--text-alt);
+    border-radius: 1.25rem;
+}
+
+.return-poke {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 0.75rem;
+    ;
+}
+
+.return-poke .card {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-background);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.return-poke .card div {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.return-poke .card img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.return-poke .card p {
+    color: var(--text-body);
+    font-size: 1.2rem;
+}
+
+.return-poke .card .type {
+    padding: 0.75rem 2rem;
+    border-radius: 1.75rem;
+}
+
+.fire {
+    background-color: #ff726f;
+    color: #ff322e;
+}
+
+.water {
+    background-color: #4a90e2;
+    color: #2d5fff;
+}
+
+.grass {
+    background-color: #8bc34a;
+    color: #5f8103;
+}
+
+.electric {
+    background-color: #ffd600;
+    color: #7f5a00;
+}
+
+.ice {
+    background-color: #00bcd4;
+    color: #005c6b;
+}
+
+.fighting {
+    background-color: #d32f2f;
+    color: #ff322e;
+}
+
+.poison {
+    background-color: #9c27b0;
+    color: #ff22c7;
+}
+
+.ground {
+    background-color: #795548;
+    color: #fff;
+}
+
+.flying {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.psychic {
+    background-color: #e91e63;
+    color: #ff3288;
+}
+
+.bug {
+    background-color: #cddc39;
+    color: #4a5000;
+}
+
+.rock {
+    background-color: #607d8b;
+    color: #fff;
+}
+
+.ghost {
+    background-color: #673ab7;
+    color: #fff;
+}
+
+.dragon {
+    background-color: #ff9800;
+    color: #7f5a00;
+}
+
+.dark {
+    background-color: #212121;
+    color: #fff;
+}
+
+.steel {
+    background-color: #9e9e9e;
+    color: #4a4a4a;
+}
+
+.fairy {
+    background-color: #f48fb1;
+    color: #8a4a00;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-title);
+}
+
+footer a {
+    color: var(--text-title);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/style.css">
+
+    <link rel="shortcut icon" href="src/favicon.svg" type="image/x-icon">
+
+    <title>Pokemon search</title>
+</head>
+
+<body>
+
+    <div class="message-return" id="message-return"></div>
+
+    <main>
+        <div class="find">
+            <div class="title">
+                <h1>Busque pelo Pokuemon desejado</h1>
+                <p>Procure utilizando a entrada de texto abaixo!</p>
+                <span>
+                    <sub>A Busca foi limitada a 256 Pokemons!</sub>
+                </span>
+            </div>
+            <div class="form-control">
+
+
+                <div class="inputs-search">
+                    <label for="search-input">Digite o nome do Pokemon desejado.</label>
+                    <input type="text" name="search-input" id="search-input" placeholder="Ex: Pikachu...">
+                    <input type="button" value="Ir" id="search-button">
+                </div>
+                <input type="button" value="See all" id="search-all">
+
+            </div>
+        </div>
+
+        <div class="return-pokes" id="return-pokes"></div>
+        <div class="return-poke" id="return-poke"></div>
+
+    </main>
+
+    <footer>
+        <p>Todos Direitos reservados a <a href="github.com/codebygustavo">Gustavo Couto</a> 2024 <sup> &copy;</sup></p>
+    </footer>
+
+    <noscript>Por favor, ative o JavaScript</noscript>
+    <script src="index.js"></script>
+</body>
+
+</html>
