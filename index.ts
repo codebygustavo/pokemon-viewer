@@ -73,7 +73,7 @@ if (seeAllButton && seeAllButton instanceof HTMLInputElement) {
     seeAllButton.addEventListener("click", () => {
 
         (async () => {
-            const response = await fetchApi("https://pokeapi.co/api/v2/pokemon?limit=256");
+            const response = await fetchApi("https://pokeapi.co/api/v2/pokemon?limit=255");
 
             if (response.error) {
                 messageReturn(response.error, "error-message")
